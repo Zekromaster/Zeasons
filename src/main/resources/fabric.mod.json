@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "zeasons",
+  "version": "${version}",
+
+  "name": "Zeasons",
+  "description": "Adds seasons to the world",
+  "authors": ["Zekromaster"],
+  "contact": {
+    "sources": "https://github.com/Zekromaster/Zeasons"
+  },
+
+  "license": "MIT",
+  "icon": "assets/zeasons/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "stationapi:event_bus": [
+      "net.zekromaster.minecraft.zeasons.entrypoints.OverworldSeasons",
+      "net.zekromaster.minecraft.zeasons.entrypoints.NoneSeason"
+    ],
+    "stationapi:event_bus_client": [],
+    "stationapi:event_bus_server": []
+  },
+  "mixins": [
+    "mixins.zeasons.json"
+  ],
+  "depends": {
+    "minecraft": "1.0.0-beta.7.3",
+    "stationapi": [">=2.0-alpha.2", "<2.0-alpha.3"]
+  },
+  "custom": {
+    "loom:injected_interfaces": { }
+  }
+}
