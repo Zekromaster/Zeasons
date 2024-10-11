@@ -12,7 +12,7 @@ public class NetherSeasons {
 
     @EventListener
     private void registerSeasons(SeasonRegistryEvent event) {
-        HELL = new Season(NAMESPACE.id("hell"));
+        event.addSeason(HELL);
     }
 
     @EventListener

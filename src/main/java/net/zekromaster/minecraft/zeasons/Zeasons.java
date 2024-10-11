@@ -10,7 +10,7 @@ public final class Zeasons {
     public static Season AUTUMN = new Season(NAMESPACE.id("autumn"));
     public static Season WINTER = new Season(NAMESPACE.id("winter"));
 
-    public static Season HELL;
+    public static Season HELL = new Season(NAMESPACE.id("hell"));
 
     public static Season NO_SEASON = new Season(NAMESPACE.id("no_season"));
 
