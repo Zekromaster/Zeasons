@@ -2,7 +2,6 @@ package net.zekromaster.minecraft.zeasons.entrypoints;
 
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.modificationstation.stationapi.api.world.dimension.VanillaDimensions;
-import net.zekromaster.minecraft.zeasons.Season;
 import net.zekromaster.minecraft.zeasons.events.SeasonCyclesEvent;
 import net.zekromaster.minecraft.zeasons.events.SeasonRegistryEvent;
 

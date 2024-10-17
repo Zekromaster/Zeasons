@@ -17,9 +17,12 @@
   "entrypoints": {
     "stationapi:event_bus": [
       "net.zekromaster.minecraft.zeasons.entrypoints.OverworldSeasons",
-      "net.zekromaster.minecraft.zeasons.entrypoints.NoneSeason"
+      "net.zekromaster.minecraft.zeasons.entrypoints.NoneSeason",
+      "net.zekromaster.minecraft.zeasons.entrypoints.NetherSeasons"
     ],
-    "stationapi:event_bus_client": [],
+    "stationapi:event_bus_client": [
+      "net.zekromaster.minecraft.zeasons.entrypoints.SeasonalColours"
+    ],
     "stationapi:event_bus_server": []
   },
   "mixins": [
@@ -29,6 +32,7 @@
     "minecraft": "1.0.0-beta.7.3",
     "stationapi": [">=2.0-alpha.2", "<2.0-alpha.3"]
   },
+  "accessWidener": "zeasons.accessWidener",
   "custom": {
     "loom:injected_interfaces": { }
   }

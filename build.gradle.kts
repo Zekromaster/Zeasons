@@ -1,12 +1,15 @@
 import java.nio.charset.Charset
 
 plugins {
-    id("fabric-loom") version "1.7.2"
-    id("babric-loom-extension") version "1.7.4"
+    id("fabric-loom") version "1.8.8"
+    id("babric-loom-extension") version "1.8.5"
     id("maven-publish")
     id("com.modrinth.minotaur") version "2.+"
 }
 
+loom {
+    accessWidenerPath = file("src/main/resources/zeasons.accessWidener")
+}
 
 val maven_group: String by project
 val minecraft_version: String by project
@@ -44,16 +47,6 @@ if (!releasing) {
 
 tasks.jar {
     archiveBaseName.value(archives_base_name)
-}
-
-
-loom {
-    @Suppress("UnstableApiUsage")
-    mixin {
-        useLegacyMixinAp = true
-    }
-    customMinecraftManifest.set("https://babric.github.io/manifest-polyfill/${minecraft_version}.json")
-    intermediaryUrl.set("https://maven.glass-launcher.net/babric/babric/intermediary/%1\$s/intermediary-%1\$s-v2.jar")
 }
 
 repositories {
@@ -105,7 +98,7 @@ dependencies {
     modImplementation("net.modificationstation:StationAPI:${stapi_version}")
 
     // Optional, but convenient mods for mod creators and users alike.
-    modImplementation("com.github.calmilamsy:ModMenu:${modmenu_version}") {
+    modImplementation("net.glasslauncher.mods:ModMenu:${modmenu_version}") {
         isTransitive = false
     }
     modImplementation("net.glasslauncher.mods:glass-networking:1.0.2") {

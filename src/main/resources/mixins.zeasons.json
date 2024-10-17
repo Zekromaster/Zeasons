@@ -10,7 +10,11 @@
     "InitSeasonsServerMixin"
   ],
   "client": [
-    "InitSeasonsClientMixin"
+    "TallPlantBlockMixin",
+    "GrassBlockMixin",
+    "InitSeasonsClientMixin",
+    "LeavesBlockMixin",
+    "WorldMixin"
   ],
   "injectors": {
     "defaultRequire": 1

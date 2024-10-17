@@ -1,6 +1,8 @@
 package net.zekromaster.minecraft.zeasons.entrypoints;
 
 import net.mine_diver.unsafeevents.listener.EventListener;
+import net.minecraft.block.Block;
+import net.modificationstation.stationapi.api.client.event.color.block.BlockColorsRegisterEvent;
 import net.zekromaster.minecraft.zeasons.events.SeasonRegistryEvent;
 
 import static net.zekromaster.minecraft.zeasons.Zeasons.NO_SEASON;
@@ -12,4 +14,11 @@ public class NoneSeason {
         event.addSeason(NO_SEASON);
     }
 
+    @EventListener
+    void registerColors(BlockColorsRegisterEvent event) {
+        event.blockColors.registerColorProvider(
+            (state, world, pos, tintIndex) -> 0xff0000,
+            Block.LEAVES
+        );
+    }
 }
