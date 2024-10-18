@@ -112,7 +112,7 @@ dependencies {
         isTransitive = false
     }
 
-    modImplementation("maven.modrinth:spc-babric:0.5.0") {
+    modImplementation("com.github.matthewperiut:retrocommands:0.5.2") {
         isTransitive = false
     }
 }
