@@ -5,14 +5,14 @@ import net.zekromaster.minecraft.zeasons.properties.SeasonPropertyKey;
 
 public enum PlantGrowthSpeed {
 
-    NO_GROWTH(0d),
-    SLOW(0.3d),
-    NORMAL(1d),
-    FAST(1d);
+    NO_GROWTH(0),
+    SLOW(30),
+    NORMAL(100),
+    FAST(100);
 
-    public final double chanceModifier;
+    public final int chanceModifier;
 
-    PlantGrowthSpeed(double chanceModifier) {
+    PlantGrowthSpeed(int chanceModifier) {
         this.chanceModifier = chanceModifier;
     }
 

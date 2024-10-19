@@ -40,7 +40,7 @@ public class SaplingMixin {
         //noinspection EqualsBetweenInconvertibleTypes
         if (Block.SAPLING.equals(this)) {
             var growthChance = getGrowthSpeed(world, world.getBlockMeta(x, y, z)).chanceModifier;
-            var possibility = random.nextDouble(0.0, 1.0);
+            var possibility = random.nextInt(100);
             if (possibility > growthChance) {
                 ci.cancel();
             }
