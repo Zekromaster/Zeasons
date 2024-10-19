@@ -17,6 +17,7 @@ val yarn_mappings: String by project
 val loader_version: String by project
 val stapi_version: String by project
 val ami_version: String by project
+val bhcreative_version: String by project
 val modmenu_version: String by project
 val archives_base_name: String by project
 val next_version: String by project
@@ -113,6 +114,10 @@ dependencies {
     }
 
     modImplementation("com.github.matthewperiut:retrocommands:0.5.2") {
+        isTransitive = false
+    }
+
+    modImplementation ("com.github.paulevsGitch:BHCreative:${bhcreative_version}") {
         isTransitive = false
     }
 }
