@@ -1,12 +1,12 @@
-package net.zekromaster.minecraft.zeasons.mixin;
+package net.zekromaster.minecraft.zeasons.mixin.colour;
 
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
-import net.zekromaster.minecraft.zeasons.Season;
 import net.zekromaster.minecraft.zeasons.TimeOfYear;
 import net.zekromaster.minecraft.zeasons.colour.InterpolateColourUtils;
 import net.zekromaster.minecraft.zeasons.colour.SeasonalColourProvider;
+import net.zekromaster.minecraft.zeasons.properties.SeasonPropertyKey;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -25,14 +25,14 @@ public abstract class LeavesBlockMixin {
 
             var meta = blockView.getBlockMeta(x, y, z);
 
-            Season.PropertyKey<SeasonalColourProvider> colourProvider;
+            SeasonPropertyKey<SeasonalColourProvider> colourProvider;
 
             if ((meta & 1) == 1) {
-                colourProvider = SeasonalColourProvider.SPRUCE_LEAVES_COLOUR_PROVIDER_KEY;
+                colourProvider = SeasonalColourProvider.PropertyKeys.SPRUCE;
             } else if ((meta & 2) == 2) {
-                colourProvider = SeasonalColourProvider.BIRCH_LEAVES_COLOUR_PROVIDER_KEY;
+                colourProvider = SeasonalColourProvider.PropertyKeys.BIRCH;
             } else {
-                colourProvider = SeasonalColourProvider.OAK_LEAVES_COLOUR_PROVIDER_KEY;
+                colourProvider = SeasonalColourProvider.PropertyKeys.OAK;
             }
 
             cir.setReturnValue(

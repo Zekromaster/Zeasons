@@ -1,4 +1,4 @@
-package net.zekromaster.minecraft.zeasons.mixin;
+package net.zekromaster.minecraft.zeasons.mixin.colour;
 
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;

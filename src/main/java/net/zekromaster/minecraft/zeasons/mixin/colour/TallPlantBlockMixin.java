@@ -1,4 +1,4 @@
-package net.zekromaster.minecraft.zeasons.mixin;
+package net.zekromaster.minecraft.zeasons.mixin.colour;
 
 import net.minecraft.block.TallPlantBlock;
 import net.minecraft.util.math.BlockPos;
@@ -27,7 +27,7 @@ public class TallPlantBlockMixin {
             if (toy != null) {
                 cir.setReturnValue(
                     InterpolateColourUtils.getColourForTimeOfYear(
-                        SeasonalColourProvider.TALL_GRASS_COLOUR_PROVIDER_KEY,
+                        SeasonalColourProvider.PropertyKeys.TALL_GRASS,
                         toy,
                         blockView,
                         new BlockPos(x, y, z)

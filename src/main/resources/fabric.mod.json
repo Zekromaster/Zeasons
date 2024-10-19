@@ -19,7 +19,8 @@
       "net.zekromaster.minecraft.zeasons.entrypoints.OverworldSeasons",
       "net.zekromaster.minecraft.zeasons.entrypoints.NoneSeason",
       "net.zekromaster.minecraft.zeasons.entrypoints.NetherSeasons",
-      "net.zekromaster.minecraft.zeasons.entrypoints.InitCompat"
+      "net.zekromaster.minecraft.zeasons.entrypoints.InitCompat",
+      "net.zekromaster.minecraft.zeasons.entrypoints.SeasonalCrops"
     ],
     "stationapi:event_bus_client": [
       "net.zekromaster.minecraft.zeasons.entrypoints.SeasonalColours"

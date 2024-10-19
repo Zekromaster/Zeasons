@@ -2,7 +2,7 @@ package net.zekromaster.minecraft.zeasons.mixin;
 
 import net.minecraft.client.Minecraft;
 import net.modificationstation.stationapi.api.StationAPI;
-import net.zekromaster.minecraft.zeasons.events.AttachSeasonHandlersEvent;
+import net.zekromaster.minecraft.zeasons.events.AttachSeasonPropertiesEvent;
 import net.zekromaster.minecraft.zeasons.events.PolishSeasonsEvent;
 import net.zekromaster.minecraft.zeasons.events.SeasonCyclesEvent;
 import net.zekromaster.minecraft.zeasons.events.SeasonRegistryEvent;
@@ -20,7 +20,7 @@ public class InitSeasonsClientMixin {
     )
     public void zeasons_initSeasons(CallbackInfo ci) {
         StationAPI.EVENT_BUS.post(new SeasonRegistryEvent());
-        StationAPI.EVENT_BUS.post(new AttachSeasonHandlersEvent());
+        StationAPI.EVENT_BUS.post(new AttachSeasonPropertiesEvent());
         StationAPI.EVENT_BUS.post(new PolishSeasonsEvent());
         StationAPI.EVENT_BUS.post(new SeasonCyclesEvent());
     }

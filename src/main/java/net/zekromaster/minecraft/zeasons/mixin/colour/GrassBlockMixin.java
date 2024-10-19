@@ -1,4 +1,4 @@
-package net.zekromaster.minecraft.zeasons.mixin;
+package net.zekromaster.minecraft.zeasons.mixin.colour;
 
 import net.minecraft.block.GrassBlock;
 import net.minecraft.util.math.BlockPos;
@@ -24,7 +24,7 @@ public class GrassBlockMixin {
         if (toy != null) {
             cir.setReturnValue(
                 InterpolateColourUtils.getColourForTimeOfYear(
-                    SeasonalColourProvider.GRASS_COLOUR_PROVIDER_KEY,
+                    SeasonalColourProvider.PropertyKeys.GRASS,
                     toy,
                     blockView,
                     new BlockPos(x, y, z)

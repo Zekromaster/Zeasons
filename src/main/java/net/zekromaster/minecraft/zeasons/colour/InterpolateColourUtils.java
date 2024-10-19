@@ -4,9 +4,9 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
-import net.zekromaster.minecraft.zeasons.Season;
 import net.zekromaster.minecraft.zeasons.SeasonCycle;
 import net.zekromaster.minecraft.zeasons.TimeOfYear;
+import net.zekromaster.minecraft.zeasons.properties.SeasonPropertyKey;
 
 @Environment(EnvType.CLIENT)
 public final class InterpolateColourUtils {
@@ -20,7 +20,7 @@ public final class InterpolateColourUtils {
     }
 
     public static int getColourForTimeOfYear(
-        Season.PropertyKey<SeasonalColourProvider> handler,
+        SeasonPropertyKey<SeasonalColourProvider> handler,
         TimeOfYear timeOfYear,
         BlockView blockView,
         BlockPos blockPos
@@ -30,7 +30,7 @@ public final class InterpolateColourUtils {
 
         var seasons = SeasonCycle.of(blockView);
 
-        var currentSeasonColour = currentSeason.getHandler(handler).colour(blockView, blockPos);
+        var currentSeasonColour = currentSeason.getProperty(handler).colour(blockView, blockPos);
         var middleOfSeason = ((double) seasons.seasonLength() / 2) - 0.5;
 
         if (currentDay == middleOfSeason) {
@@ -40,7 +40,7 @@ public final class InterpolateColourUtils {
         var otherSeason = (currentDay < middleOfSeason) ?
             seasons.previousSeason(currentSeason) : seasons.nextSeason(currentSeason);
 
-        var otherColour = otherSeason.getHandler(handler).colour(blockView, blockPos);
+        var otherColour = otherSeason.getProperty(handler).colour(blockView, blockPos);
 
         if (currentSeasonColour == otherColour) {
             return currentSeasonColour;
