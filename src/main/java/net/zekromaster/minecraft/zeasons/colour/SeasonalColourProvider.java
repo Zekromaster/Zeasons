@@ -52,6 +52,7 @@ public interface SeasonalColourProvider {
                 return GrassColors.getColor(var5, var7);
             }
         );
+
     }
 
     int colour(BlockView world, BlockPos state);

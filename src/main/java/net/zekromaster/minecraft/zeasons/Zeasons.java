@@ -1,5 +1,8 @@
 package net.zekromaster.minecraft.zeasons;
 
+import net.minecraft.block.Block;
+import net.modificationstation.stationapi.api.registry.BlockRegistry;
+import net.modificationstation.stationapi.api.tag.TagKey;
 import net.modificationstation.stationapi.api.util.Namespace;
 
 public final class Zeasons {
@@ -15,4 +18,7 @@ public final class Zeasons {
 
     public static final Season NO_SEASON = new Season(NAMESPACE.id("no_season"));
 
+    public static Block LEAF_PILE;
+
+    public static TagKey<Block> PLACE_LEAF_PILES_TAG = TagKey.of(BlockRegistry.KEY, NAMESPACE.id("allows_leaf_piles"));
 }
