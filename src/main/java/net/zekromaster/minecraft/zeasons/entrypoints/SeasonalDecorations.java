@@ -14,9 +14,9 @@ public class SeasonalDecorations {
 
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
-        Zeasons.LEAF_PILE = new LeafPileBlock(
+        Zeasons.LEAF_PILE = (LeafPileBlock) new LeafPileBlock(
             NAMESPACE.id("leaf_pile"),
-            0xad8557
+            new int[] { 0xad8557, 0xcc8014, 0xff9004, 0xaf300f, 0xe3af00 }
         ).setTranslationKey(NAMESPACE.id("leaf_pile"));
     }
 
