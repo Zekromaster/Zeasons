@@ -44,10 +44,14 @@ public class LeavesBlockMixin {
             if (random.nextInt(100) < frequency.spawnChance) {
                 var spawnX = random.nextInt(x - MAX_DISTANCE_FROM_LEAF, x + MAX_DISTANCE_FROM_LEAF);
                 var spawnZ = random.nextInt(z - MAX_DISTANCE_FROM_LEAF, z + MAX_DISTANCE_FROM_LEAF);
-                var spawnY = y - 1;
+                var spawnY = y;
+                if (world.getBlockId(spawnX, spawnY, spawnZ) != 0) {
+                    spawnY--;
+                }
                 while (world.getBlockId(spawnX, spawnY, spawnZ) == 0 && spawnY > 0) {
                     spawnY--;
                 }
+                spawnY++;
                 if (Zeasons.LEAF_PILE.canPlaceAt(world, spawnX, spawnY, spawnZ) && !isTooCrowded(world, spawnX, spawnY, spawnZ)) {
                     Zeasons.LEAF_PILE.withRandomMeta(world, spawnX, spawnY, spawnZ, random);
                 }
