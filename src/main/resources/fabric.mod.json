@@ -16,17 +16,18 @@
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [
+      "net.zekromaster.minecraft.zeasons.entrypoints.InitCompat"
+    ],
+    "zeasons:event_bus/client": [
+      "net.zekromaster.minecraft.zeasons.entrypoints.SeasonalColours"
+    ],
+    "zeasons:event_bus": [
       "net.zekromaster.minecraft.zeasons.entrypoints.OverworldSeasons",
       "net.zekromaster.minecraft.zeasons.entrypoints.NoneSeason",
       "net.zekromaster.minecraft.zeasons.entrypoints.NetherSeasons",
-      "net.zekromaster.minecraft.zeasons.entrypoints.InitCompat",
       "net.zekromaster.minecraft.zeasons.entrypoints.SeasonalCrops",
       "net.zekromaster.minecraft.zeasons.entrypoints.SeasonalDecorations"
-    ],
-    "stationapi:event_bus_client": [
-      "net.zekromaster.minecraft.zeasons.entrypoints.SeasonalColours"
-    ],
-    "stationapi:event_bus_server": []
+    ]
   },
   "mixins": [
     "mixins.zeasons.json"

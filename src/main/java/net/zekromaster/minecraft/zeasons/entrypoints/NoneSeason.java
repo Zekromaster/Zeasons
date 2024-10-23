@@ -14,11 +14,4 @@ public class NoneSeason {
         event.addSeason(NO_SEASON);
     }
 
-    @EventListener
-    void registerColors(BlockColorsRegisterEvent event) {
-        event.blockColors.registerColorProvider(
-            (state, world, pos, tintIndex) -> 0xff0000,
-            Block.LEAVES
-        );
-    }
 }
