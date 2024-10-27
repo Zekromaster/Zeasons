@@ -54,9 +54,9 @@ public class SaplingMixin {
     public int increasedChances(
         int bound,
         @Local(argsOnly = true) World world,
-        @Local(name = "x") int x,
-        @Local(name = "y") int y,
-        @Local(name = "z") int z
+        @Local(ordinal = 0, argsOnly = true) int x,
+        @Local(ordinal = 1, argsOnly = true) int y,
+        @Local(ordinal = 2, argsOnly = true) int z
     ) {
         //noinspection EqualsBetweenInconvertibleTypes
         if (Block.SAPLING.equals(this)) {
