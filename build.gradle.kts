@@ -7,10 +7,6 @@ plugins {
     id("com.modrinth.minotaur") version "2.+"
 }
 
-loom {
-    accessWidenerPath = file("src/main/resources/zeasons.accessWidener")
-}
-
 val maven_group: String by project
 val minecraft_version: String by project
 val yarn_mappings: String by project
