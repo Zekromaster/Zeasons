@@ -6,6 +6,7 @@ import net.minecraft.world.WorldRegion;
 import net.minecraft.world.dimension.Dimension;
 import net.modificationstation.stationapi.api.registry.DimensionRegistry;
 import net.modificationstation.stationapi.api.util.Identifier;
+import net.zekromaster.minecraft.zeasons.mixin.WorldRegionAccessor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -22,7 +23,7 @@ public record SeasonCycle(int seasonLength, List<Season> seasons) {
     @NotNull
     public static SeasonCycle of(BlockView view) {
         if (view instanceof WorldRegion region) {
-            return of(region.world.dimension);
+            return of(((WorldRegionAccessor)region).getWorld().dimension);
         }
         if (view instanceof World world) {
             return of(world.dimension);
