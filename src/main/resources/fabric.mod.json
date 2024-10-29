@@ -39,7 +39,6 @@
   "suggests": {
     "retrocommands": "*"
   },
-  "accessWidener": "zeasons.accessWidener",
   "custom": {
     "loom:injected_interfaces": { }
   }
