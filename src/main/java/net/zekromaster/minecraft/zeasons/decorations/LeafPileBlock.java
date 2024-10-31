@@ -89,7 +89,7 @@ public class LeafPileBlock extends TemplateBlock {
     }
 
     public void withRandomMeta(World world, int x, int y, int z, Random random) {
-        world.setBlockStateWithMetadata(
+        world.setBlockStateWithMetadataWithNotify(
             x, y, z,
             this.getDefaultState(),
             random.nextInt(colours.length)
