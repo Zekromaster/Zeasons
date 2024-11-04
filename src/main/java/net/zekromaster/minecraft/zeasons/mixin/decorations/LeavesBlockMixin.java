@@ -48,12 +48,17 @@ public class LeavesBlockMixin {
                 if (world.getBlockId(spawnX, spawnY, spawnZ) != 0) {
                     spawnY--;
                 }
-                while (world.getBlockId(spawnX, spawnY, spawnZ) == 0 && spawnY > 0) {
+
+                var block = world.getBlockId(spawnX, spawnY, spawnZ);
+                while (spawnY > world.getBottomY()) {
+                    if (block != 0 && world.getBlockId(spawnX, spawnY + 1, spawnZ) == 0) {
+                        if (Zeasons.LEAF_PILE.canPlaceAt(world, spawnX, spawnY + 1, spawnZ) && !isTooCrowded(world, spawnX, spawnY + 1, spawnZ)) {
+                            Zeasons.LEAF_PILE.withRandomMeta(world, spawnX, spawnY + 1, spawnZ, random);
+                        }
+                        break;
+                    }
                     spawnY--;
-                }
-                spawnY++;
-                if (Zeasons.LEAF_PILE.canPlaceAt(world, spawnX, spawnY, spawnZ) && !isTooCrowded(world, spawnX, spawnY, spawnZ)) {
-                    Zeasons.LEAF_PILE.withRandomMeta(world, spawnX, spawnY, spawnZ, random);
+                    block = world.getBlockId(spawnX, spawnY, spawnZ);
                 }
             }
         }
