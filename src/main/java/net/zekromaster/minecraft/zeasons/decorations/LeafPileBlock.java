@@ -19,10 +19,6 @@ public class LeafPileBlock extends TemplateBlock {
 
     private final int[] colours;
 
-    public LeafPileBlock(Identifier identifier, int colour) {
-        this(identifier, new int[] { colour });
-    }
-
     public LeafPileBlock(Identifier identifier, int[] colours) {
         super(identifier, Material.LEAVES);
         this.colours = colours;
@@ -94,5 +90,12 @@ public class LeafPileBlock extends TemplateBlock {
             this.getDefaultState(),
             random.nextInt(colours.length)
         );
+    }
+
+    public void neighborUpdate(World world, int x, int y, int z, int id) {
+        if (!this.canPlaceAt(world, x, y, z)) {
+            this.dropStacks(world, x, y, z, world.getBlockMeta(x, y, z));
+            world.setBlock(x, y, z, 0);
+        }
     }
 }
